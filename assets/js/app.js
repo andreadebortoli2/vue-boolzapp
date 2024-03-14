@@ -6,8 +6,6 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            newMessage: null,
-            messageText: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -179,6 +177,17 @@ createApp({
                     ],
                 },
             ],
+            messageText: '',
+            newMessage: {
+                date: '000',
+                text: '',
+                status: 'sent'
+            },
+            defeaultReply: {
+                date: '111',
+                text: 'ok',
+                status: 'received',
+            },
         }
     },
     methods: {
@@ -187,12 +196,14 @@ createApp({
             this.contacts[index].displayChat = true;
         },
         sendMessage(index, text) {
-
             this.messageText = text
 
-            this.newMessage = { date: '000', text: text, status: 'sent' };
+            this.newMessage.text = this.messageText;
             
             this.messageText.length !== 0 ? (this.contacts[index].messages.push(this.newMessage), this.messageText = null) : null;
+        },
+        sendDefeaultReply(index) {
+            setTimeout(() => this.contacts[index].messages.push(this.defeaultReply), 1000);
         },
     },
 }).mount('#app')

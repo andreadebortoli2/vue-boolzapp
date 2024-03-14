@@ -185,7 +185,7 @@
                         <!-- /.text-emoticons -->
 
                         <div class="text-area">
-                            <input type="text" v-model="messageText" placeholder="Scrivi un messaggio" @keyup.enter="sendMessage(index, messageText)">
+                            <input type="text" v-model="messageText" placeholder="Scrivi un messaggio" @keyup.enter="sendMessage(index, messageText); sendDefeaultReply(index)">
                         </div>
                         <!-- /.text-area -->
 

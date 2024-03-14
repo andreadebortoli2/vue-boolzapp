@@ -147,7 +147,7 @@
 
                             <div class="message"
                                 :class="{sent: message.status === 'sent', received: message.status === 'received'}"
-                                v-for="message in contact.messages">
+                                v-for="(message,msgId) in contact.messages">
 
                                 <div class="message-text">
                                     {{message.text}}
@@ -164,7 +164,7 @@
                                             Info messaggio
                                         </div>
 
-                                        <div>
+                                        <div @click="remove(index,msgId)">
                                             Cancella messaggio
                                         </div>
                                     </div>

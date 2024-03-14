@@ -200,6 +200,7 @@ createApp({
             this.messageText = text
             this.newMessage.text = this.messageText;
             this.messageText.length !== 0 ? (this.contacts[index].messages.push(this.newMessage), this.messageText = null) : null;
+            console.log(this.contacts[index].messages);
         },
         sendDefeaultReply(index) {
             setTimeout(() => this.contacts[index].messages.push(this.defeaultReply), 1000);
@@ -207,6 +208,9 @@ createApp({
         searchUserName() {
             // console.log(this.searchUser.toLowerCase());
             this.contacts.filter(contact => contact.name.toLowerCase().includes(this.searchUser.toLowerCase()) ? contact.visible = true : contact.visible = false);
+        },
+        remove(index, msgId) {
+            this.contacts[index].messages.splice(msgId,1)
         },
     },
 }).mount('#app')

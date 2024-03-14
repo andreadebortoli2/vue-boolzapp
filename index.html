@@ -16,14 +16,14 @@
 
 <body>
 
-    <div id="app"> {{message}}
+    <div id="app">
 
         <div class="left">
 
             <div class="contact-list-header">
 
                 <div class="user-image">
-                    <img src="./assets/img/users-profile-img/avatar_io.jpg" alt="">
+                    <img src="./assets/img/avatars/avatar_io.jpg" alt="">
                 </div>
                 <!-- /.user-image -->
 
@@ -69,16 +69,16 @@
 
             <div class="contact-list-contacts">
 
-                <div class="contact">
+                <div class="contact" v-for="contact in contacts">
 
                     <div class="contact-image">
-                        <img src="./assets/img/users-profile-img/avatar_1.jpg" alt="">
+                        <img :src="contact.avatar" alt="">
                     </div>
                     <!-- /.contact-image -->
 
                     <div class="contact-info">
                         <div class="contact-name">
-                            Michele
+                            {{contact.name}}
                         </div>
                         <div class="contact-status">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</div>
                     </div>
@@ -91,159 +91,6 @@
                 </div>
                 <!-- /.contact -->
 
-                <div class="contact">
-
-                    <div class="contact-image">
-                        <img src="./assets/img/users-profile-img/avatar_2.jpg" alt="">
-                    </div>
-                    <!-- /.contact-image -->
-
-                    <div class="contact-info">
-                        <div class="contact-name">
-                            Fabio
-                        </div>
-                        <div class="contact-status">Lorem ipsum dolor sit amet.</div>
-                    </div>
-                    <!-- /.contact-info -->
-
-                    <div class="contact-last-access">
-                        16:05
-                    </div>
-                    <!-- /.contact-last-access -->
-                </div>
-                <!-- /.contact -->
-
-                <div class="contact">
-
-                    <div class="contact-image">
-                        <img src="./assets/img/users-profile-img/avatar_3.jpg" alt="">
-                    </div>
-                    <!-- /.contact-image -->
-
-                    <div class="contact-info">
-                        <div class="contact-name">
-                            Samuele
-                        </div>
-                        <div class="contact-status">Lorem ipsum dolor sit amet.</div>
-                    </div>
-                    <!-- /.contact-info -->
-
-                    <div class="contact-last-access">
-                        16:03
-                    </div>
-                    <!-- /.contact-last-access -->
-                </div>
-                <!-- /.contact -->
-
-                <div class="contact">
-
-                    <div class="contact-image">
-                        <img src="./assets/img/users-profile-img/avatar_4.jpg" alt="">
-                    </div>
-                    <!-- /.contact-image -->
-
-                    <div class="contact-info">
-                        <div class="contact-name">
-                            Alessandro B.
-                        </div>
-                        <div class="contact-status">Lorem ipsum dolor sit amet.</div>
-                    </div>
-                    <!-- /.contact-info -->
-
-                    <div class="contact-last-access">
-                        15:50
-                    </div>
-                    <!-- /.contact-last-access -->
-                </div>
-                <!-- /.contact -->
-
-                <div class="contact">
-
-                    <div class="contact-image">
-                        <img src="./assets/img/users-profile-img/avatar_5.jpg" alt="">
-                    </div>
-                    <!-- /.contact-image -->
-
-                    <div class="contact-info">
-                        <div class="contact-name">
-                            Alessandro L.
-                        </div>
-                        <div class="contact-status">Lorem ipsum dolor sit amet.</div>
-                    </div>
-                    <!-- /.contact-info -->
-
-                    <div class="contact-last-access">
-                        15:45
-                    </div>
-                    <!-- /.contact-last-access -->
-                </div>
-                <!-- /.contact -->
-
-                <div class="contact">
-
-                    <div class="contact-image">
-                        <img src="./assets/img/users-profile-img/avatar_6.jpg" alt="">
-                    </div>
-                    <!-- /.contact-image -->
-
-                    <div class="contact-info">
-                        <div class="contact-name">
-                            Agata
-                        </div>
-                        <div class="contact-status">Lorem ipsum dolor sit amet.</div>
-                    </div>
-                    <!-- /.contact-info -->
-
-                    <div class="contact-last-access">
-                        15:36
-                    </div>
-                    <!-- /.contact-last-access -->
-                </div>
-                <!-- /.contact -->
-
-                <div class="contact">
-
-                    <div class="contact-image">
-                        <img src="./assets/img/users-profile-img/avatar_7.jpg" alt="">
-                    </div>
-                    <!-- /.contact-image -->
-
-                    <div class="contact-info">
-                        <div class="contact-name">
-                            Federico
-                        </div>
-                        <div class="contact-status">Lorem ipsum dolor sit amet.</div>
-                    </div>
-                    <!-- /.contact-info -->
-
-                    <div class="contact-last-access">
-                        15:09
-                    </div>
-                    <!-- /.contact-last-access -->
-                </div>
-                <!-- /.contact -->
-
-                <div class="contact">
-
-                    <div class="contact-image">
-                        <img src="./assets/img/users-profile-img/avatar_8.jpg" alt="">
-                    </div>
-                    <!-- /.contact-image -->
-
-                    <div class="contact-info">
-                        <div class="contact-name">
-                            Riccardo
-                        </div>
-                        <div class="contact-status">Lorem ipsum dolor sit amet.</div>
-                    </div>
-                    <!-- /.contact-info -->
-
-                    <div class="contact-last-access">
-                        14:15
-                    </div>
-                    <!-- /.contact-last-access -->
-                </div>
-                <!-- /.contact -->
             </div>
             <!-- /.contact-list-contacts -->
         </div>
@@ -255,7 +102,7 @@
             <div class="chat-header">
 
                 <div class="chat-speaker-image">
-                    <img src="./assets/img/users-profile-img/avatar_1.jpg" alt="">
+                    <img src="./assets/img/avatars/avatar_1.jpg" alt="">
                 </div>
                 <!-- /.chat-speaker-image -->
 

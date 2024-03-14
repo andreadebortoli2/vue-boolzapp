@@ -60,36 +60,39 @@
                 </div>
                 <!-- /.notifications -->
 
-                <form action="#" method="get" class="search-chat">
-                    <input type="text" name="search" placeholder="&#xf002;      Cerca o inizia una nuova chat">
-                </form>
+                <div class="search-chat">
+                    <input type="text" v-model="searchUser" @keyup="searchUserName()"
+                        placeholder="&#xf002;      Cerca o inizia una nuova chat">
+                </div>
                 <!-- /.search-chat -->
             </div>
             <!-- /.contact-list-utilities -->
 
             <div class="contact-list-contacts">
 
-                <div class="contact" v-for="(contact,index) in contacts" @click="displayChat(index)">
+                <template v-for="(contact,index) in contacts">
+                    <div class="contact" v-if="contact.visible === true" @click="displayChat(index)">
 
-                    <div class="contact-image">
-                        <img :src="contact.avatar" alt="">
-                    </div>
-                    <!-- /.contact-image -->
-
-                    <div class="contact-info">
-                        <div class="contact-name">
-                            {{contact.name}}
+                        <div class="contact-image">
+                            <img :src="contact.avatar" alt="">
                         </div>
-                        <div class="contact-status">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</div>
-                    </div>
-                    <!-- /.contact-info -->
+                        <!-- /.contact-image -->
 
-                    <div class="contact-last-access">
-                        16:15
+                        <div class="contact-info">
+                            <div class="contact-name">
+                                {{contact.name}}
+                            </div>
+                            <div class="contact-status">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</div>
+                        </div>
+                        <!-- /.contact-info -->
+
+                        <div class="contact-last-access">
+                            16:15
+                        </div>
+                        <!-- /.contact-last-access -->
                     </div>
-                    <!-- /.contact-last-access -->
-                </div>
-                <!-- /.contact -->
+                    <!-- /.contact -->
+                </template>
 
             </div>
             <!-- /.contact-list-contacts -->
@@ -142,7 +145,9 @@
 
                         <div class="wrapper">
 
-                            <div class="message" :class="{sent: message.status === 'sent', received: message.status === 'received'}" v-for="message in contact.messages">
+                            <div class="message"
+                                :class="{sent: message.status === 'sent', received: message.status === 'received'}"
+                                v-for="message in contact.messages">
 
                                 <div class="message-text">
                                     {{message.text}}
@@ -185,7 +190,8 @@
                         <!-- /.text-emoticons -->
 
                         <div class="text-area">
-                            <input type="text" v-model="messageText" placeholder="Scrivi un messaggio" @keyup.enter="sendMessage(index, messageText); sendDefeaultReply(index)">
+                            <input type="text" v-model="messageText" placeholder="Scrivi un messaggio"
+                                @keyup.enter="sendMessage(index, messageText); sendDefeaultReply(index)">
                         </div>
                         <!-- /.text-area -->
 
@@ -196,7 +202,9 @@
                     </div>
                     <!-- /.chat-text -->
                 </template>
+                <!-- /template v-if-->
             </template>
+            <!-- /template v-for-->
         </div>
         <!-- /.right -->
     </div>

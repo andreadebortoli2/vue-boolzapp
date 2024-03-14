@@ -188,6 +188,7 @@ createApp({
                 text: 'ok',
                 status: 'received',
             },
+            searchUser: '',
         }
     },
     methods: {
@@ -197,13 +198,15 @@ createApp({
         },
         sendMessage(index, text) {
             this.messageText = text
-
             this.newMessage.text = this.messageText;
-            
             this.messageText.length !== 0 ? (this.contacts[index].messages.push(this.newMessage), this.messageText = null) : null;
         },
         sendDefeaultReply(index) {
             setTimeout(() => this.contacts[index].messages.push(this.defeaultReply), 1000);
+        },
+        searchUserName() {
+            // console.log(this.searchUser.toLowerCase());
+            this.contacts.filter(contact => contact.name.toLowerCase().includes(this.searchUser.toLowerCase()) ? contact.visible = true : contact.visible = false);
         },
     },
 }).mount('#app')

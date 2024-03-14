@@ -24,12 +24,12 @@ Boolzapp- a (not very) innovative messaging platform
 
 
 ### Consigli utili:
- ● Sipossono trascurare le scrollbar verticali, sia nel pannello dei messaggi, che nella lista dei contatti
- ● Ipulsanti e le icone possono non funzionare (a parte l’invio del messaggio)
- ● Pergestire le date, può essere utile la libreria Luxon
- ● Lastruttura dell’array dei contatti potrebbe avere questa forma:
+ ● Si possono trascurare le scrollbar verticali, sia nel pannello dei messaggi, che nella lista dei contatti
+ ● I pulsanti e le icone possono non funzionare (a parte l’invio del messaggio)
+ ● Per gestire le date, può essere utile la libreria Luxon
+ ● La struttura dell’array dei contatti potrebbe avere questa forma:
 
- contacts: [
+- contacts: [
     {
         name: 'Michele',
         avatar: './img/avatar_1.png',

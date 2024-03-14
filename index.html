@@ -99,7 +99,7 @@
 
         <div class="right">
 
-            <template v-for="contact in contacts">
+            <template v-for="(contact,index) in contacts">
                 <template v-if="contact.displayChat === true">
 
                     <div class="chat-header">
@@ -167,12 +167,11 @@
                                 <!-- /.message-utilities -->
 
                                 <div class="message-time">
-                                    16.13
+                                    {{message.date}}
                                 </div>
                                 <!-- /.message-time -->
                             </div>
                             <!-- /.message -->
-
                         </div>
                         <!-- /.wrapper -->
                     </div>
@@ -185,9 +184,9 @@
                         </div>
                         <!-- /.text-emoticons -->
 
-                        <form action="#" method="post" class="text-area">
-                            <input type="text" name="message-text" placeholder="Scrivi un messaggio">
-                        </form>
+                        <div class="text-area">
+                            <input type="text" v-model="messageText" placeholder="Scrivi un messaggio" @keyup.enter="sendMessage(index, messageText)">
+                        </div>
                         <!-- /.text-area -->
 
                         <div class="vocal">

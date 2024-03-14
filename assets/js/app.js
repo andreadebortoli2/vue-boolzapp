@@ -6,6 +6,8 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            newMessage: null,
+            messageText: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -29,7 +31,7 @@ createApp({
                             status: 'sent',
                         },
                     ],
-                },          
+                },
                 {
                     name: 'Fabio',
                     avatar: './assets/img/avatars/avatar_2.jpg',
@@ -52,7 +54,7 @@ createApp({
                             status: 'sent',
                         },
                     ],
-                },           
+                },
                 {
                     name: 'Samuele',
                     avatar: './assets/img/avatars/avatar_3.jpg',
@@ -75,7 +77,7 @@ createApp({
                             status: 'received',
                         },
                     ],
-                },              
+                },
                 {
                     name: 'Alessandro B.',
                     avatar: './assets/img/avatars/avatar_4.jpg',
@@ -93,8 +95,8 @@ createApp({
                             status: 'received',
                         },
                     ],
-                },            
-                {      
+                },
+                {
                     name: 'Alessandro L.',
                     avatar: './assets/img/avatars/avatar_5.jpg',
                     visible: true,
@@ -111,7 +113,7 @@ createApp({
                             status: 'received',
                         },
                     ],
-                },            
+                },
                 {
                     name: 'Claudia',
                     avatar: './assets/img/avatars/avatar_6.jpg',
@@ -134,7 +136,7 @@ createApp({
                             status: 'sent',
                         },
                     ],
-                },           
+                },
                 {
                     name: 'Federico',
                     avatar: './assets/img/avatars/avatar_7.jpg',
@@ -183,6 +185,14 @@ createApp({
         displayChat(index) {
             this.contacts.map(contact => contact.displayChat = false);
             this.contacts[index].displayChat = true;
+        },
+        sendMessage(index, text) {
+
+            this.messageText = text
+
+            this.newMessage = { date: '000', text: text, status: 'sent' };
+            
+            this.messageText.length !== 0 ? (this.contacts[index].messages.push(this.newMessage), this.messageText = null) : null;
         },
     },
 }).mount('#app')

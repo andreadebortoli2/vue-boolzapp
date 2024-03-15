@@ -178,11 +178,6 @@ createApp({
                 },
             ],
             messageText: '',
-            defeaultReply: {
-                date: '111',
-                text: 'ok',
-                status: 'received',
-            },
             searchUser: '',
             DateTime: luxon.DateTime,
         }
@@ -194,12 +189,13 @@ createApp({
         },
         sendMessage(index, text) {
             this.messageText = text
-            const newMessage = {date: '000', text: this.messageText, status: 'sent',};
+            const newMessage = {date: this.currentDate(), text: this.messageText, status: 'sent',};
             this.messageText.length !== 0 ? (this.contacts[index].messages.push(newMessage),this.messageText='') : null;
             // console.log(this.contacts[index].messages);
         },
         sendDefeaultReply(index) {
-            setTimeout(() => this.contacts[index].messages.push(this.defeaultReply), 1000);
+            const defeaultReply = {date: this.currentDate(), text: 'ok', status: 'received',};
+            setTimeout(() => this.contacts[index].messages.push(defeaultReply), 1000);
         },
         searchUserName() {
             // console.log(this.searchUser.toLowerCase());
@@ -221,11 +217,13 @@ createApp({
             // console.log(this.contacts[index].messages[this.contacts[index].messages.length-1].date);
             return this.contacts[index].messages[this.contacts[index].messages.length-1].date;
         },
+        currentDate() {
+            // console.log(this.DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss'));
+            return this.DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss');
+        },
     },
     mounted() {
-            /* console.log('show: '+ this.DateTime.now());  
-            console.log('show: '+ this.DateTime.now().toFormat('HH:mm'));  
-            console.log(this.contacts[0].messages[0].date);
-            console.log(this.DateTime.fromFormat(this.contacts[0].messages[0].date, 'dd/MM/yyyy HH:mm:ss').toFormat('HH:mm'));  */
+            /* console.log('show: '+ ); */
+            
     },
 }).mount('#app')

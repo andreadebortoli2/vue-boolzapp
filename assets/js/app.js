@@ -37,6 +37,11 @@ createApp({
                     displayChat: false,
                     messages: [
                         {
+                            date: '',
+                            text: '',
+                            status: 'none',
+                        },
+                        {
                             date: '20/03/2020 16:30:00',
                             text: 'Ciao come stai?',
                             status: 'sent',
@@ -59,6 +64,11 @@ createApp({
                     visible: true,
                     displayChat: false,
                     messages: [
+                        {
+                            date: '',
+                            text: '',
+                            status: 'none',
+                        },
                         {
                             date: '28/03/2020 10:10:40',
                             text: 'La Marianna va in campagna',
@@ -83,6 +93,11 @@ createApp({
                     displayChat: false,
                     messages: [
                         {
+                            date: '',
+                            text: '',
+                            status: 'none',
+                        },
+                        {
                             date: '10/01/2020 15:30:55',
                             text: 'Lo sai che ha aperto una nuova pizzeria?',
                             status: 'sent',
@@ -101,6 +116,11 @@ createApp({
                     displayChat: false,
                     messages: [
                         {
+                            date: '',
+                            text: '',
+                            status: 'none',
+                        },
+                        {
                             date: '10/01/2020 15:30:55',
                             text: 'Ricordati di chiamare la nonna',
                             status: 'sent',
@@ -118,6 +138,11 @@ createApp({
                     visible: true,
                     displayChat: false,
                     messages: [
+                        {
+                            date: '',
+                            text: '',
+                            status: 'none',
+                        },
                         {
                             date: '10/01/2020 15:30:55',
                             text: 'Ciao Claudia, hai novità?',
@@ -142,6 +167,11 @@ createApp({
                     displayChat: false,
                     messages: [
                         {
+                            date: '',
+                            text: '',
+                            status: 'none',
+                        },
+                        {
                             date: '10/01/2020 15:30:55',
                             text: 'Fai gli auguri a Martina che è il suo compleanno!',
                             status: 'sent',
@@ -159,6 +189,11 @@ createApp({
                     visible: true,
                     displayChat: false,
                     messages: [
+                        {
+                            date: '',
+                            text: '',
+                            status: 'none',
+                        },
                         {
                             date: '10/01/2020 15:30:55',
                             text: 'Ciao, andiamo a mangiare la pizza stasera?',
@@ -204,6 +239,7 @@ createApp({
         remove(index, msgId) {
             // console.log(this.contacts[index].messages.splice(msgId,1));
             this.contacts[index].messages.splice(msgId,1);
+            console.log(this.contacts[index].messages[msgId].text);
         },
         messageDate(index, msgId) {
             // console.log(this.contacts[index].messages[msgId].date);

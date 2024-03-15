@@ -25,6 +25,18 @@ body {
     background-image: linear-gradient(to bottom, var(--body-bg-dark) 0%, var(--body-bg-dark) 15%, var(--body-bg-light) 15%, var(--body-bg-light) 100%);
 }
 
+div {
+    cursor: context-menu;
+}
+
+i {
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
 
 /* Main */
 #app {
@@ -284,6 +296,11 @@ body {
 
                     & > div {
                         padding: 0.5rem 1rem;
+                        cursor: pointer;
+
+                        &:hover {
+                            opacity: 0.7;
+                        }
                     }
                 }
             }
@@ -304,6 +321,10 @@ body {
 
         .received {
             background-color: var(--site-lighter);
+        }
+
+        .none {
+            display: none;
         }
     }
 }

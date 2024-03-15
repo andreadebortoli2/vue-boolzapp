@@ -148,7 +148,7 @@
                         <div class="wrapper">
 
                             <div class="message"
-                                :class="{sent: message.status === 'sent', received: message.status === 'received'}"
+                                :class="{sent: message.status === 'sent', received: message.status === 'received', none: message.status === 'none'}"
                                 v-for="(message,msgId) in contact.messages">
 
                                 <div class="message-text">

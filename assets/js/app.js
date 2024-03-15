@@ -220,7 +220,7 @@ createApp({
             messageText: '',
             searchUser: '',
             DateTime: luxon.DateTime,
-            showEmoticons: true,
+            showEmoticons: false,
             emoticons: [
                 {
                     name: 'smile',

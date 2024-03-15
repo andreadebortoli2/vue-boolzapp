@@ -82,12 +82,14 @@
                             <div class="contact-name">
                                 {{contact.name}}
                             </div>
-                            <div class="contact-last-message" @click="lastMessage(index)">0000</div>
+                            <div class="contact-last-message">
+                                {{lastMessage(index)}}
+                            </div>
                         </div>
                         <!-- /.contact-info -->
 
                         <div class="contact-last-access">
-                            16:15
+                            {{lastAccess(index)}}
                         </div>
                         <!-- /.contact-last-access -->
                     </div>
@@ -120,7 +122,7 @@
                             <!-- /.speaker-name -->
 
                             <div class="speaker-last-access-info">
-                                Ultimo accesso oggi alle 16:26
+                                Ultimo accesso oggi alle {{lastAccess(index)}}
                             </div>
                             <!-- /.last-access-info -->
                         </div>
@@ -171,8 +173,8 @@
                                 </div>
                                 <!-- /.message-utilities -->
 
-                                <div class="message-time" @click="time(index,msgId)">
-                                    0
+                                <div class="message-time">
+                                    {{messageDate(index,msgId)}}
                                 </div>
                                 <!-- /.message-time -->
                             </div>

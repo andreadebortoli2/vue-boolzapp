@@ -207,11 +207,17 @@ createApp({
         remove(index, msgId) {
             this.contacts[index].messages.splice(msgId,1)
         },
+        messageDate(index, msgId) {
+            return this.contacts[index].messages[msgId].date
+        },
         lastMessage(index) {
-            console.log(
-
-                this.contacts[index].messages[this.messages.length-1]
-            );
-        }
+            return this.contacts[index].messages[this.contacts[index].messages.length-1].text
+        },
+        lastAccess(index) {
+            return this.contacts[index].messages[this.contacts[index].messages.length-1].date
+        },
+    },
+    mounted() {
+            console.log('show: ');  
     },
 }).mount('#app')

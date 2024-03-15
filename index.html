@@ -187,7 +187,10 @@
                     <div class="chat-input">
 
                         <div class="emoticons">
-                            <i class="fa-regular fa-face-smile"></i>
+                            <i class="fa-regular fa-face-smile" @click="showEmoticons = !showEmoticons"></i>
+                            <div class="emoticons_list" v-show="showEmoticons === true">
+                                <div class="emoticon" v-for="(emoticon,emoteId) in emoticons" @click="addEmoteText(emoteId,messageText)">{{emoticon.text}}</div>
+                            </div>
                         </div>
                         <!-- /.text-emoticons -->
 

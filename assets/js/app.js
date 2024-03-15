@@ -14,6 +14,11 @@ createApp({
                     displayChat: true,
                     messages: [
                         {
+                            date: '',
+                            text: '',
+                            status: 'none',
+                        },
+                        {
                             date: '10/01/2020 15:30:55',
                             text: 'Hai portato a spasso il cane?',
                             status: 'sent',
@@ -215,6 +220,29 @@ createApp({
             messageText: '',
             searchUser: '',
             DateTime: luxon.DateTime,
+            showEmoticons: true,
+            emoticons: [
+                {
+                    name: 'smile',
+                    text: '😊',
+                },
+                {
+                    name: 'cry',
+                    text: '😢',
+                },
+                {
+                    name: 'love',
+                    text: '😍',
+                },
+                {
+                    name: 'like',
+                    text: '👍',
+                },
+                {
+                    name: 'heart',
+                    text: '❤️',
+                },
+            ],
         }
     },
     methods: {
@@ -256,6 +284,10 @@ createApp({
         currentDate() {
             // console.log(this.DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss'));
             return this.DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss');
+        },
+        addEmoteText(index) {
+           this.messageText += this.emoticons[index].text
+        //    console.log(this.messageText);
         },
     },
     mounted() {

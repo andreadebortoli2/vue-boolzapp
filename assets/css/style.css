@@ -342,6 +342,28 @@ i {
         padding: 0 1rem;
     }
 
+    .emoticons {
+        position: relative;
+
+        .emoticons_list {
+            background-color: var(--header-bg);
+            padding: 0.2rem;
+            position: absolute;
+            bottom: 30px;
+            left: 2px;
+            border-radius: 1rem;
+            border: 2px solid var(--icons-color);
+
+            .emoticon {
+                padding: 0.3rem;
+
+                &:hover {
+                    opacity: 0.7;
+                }
+            }
+        }
+    }
+
     .text-area {
         flex-grow: 1;
         padding: 0 0.5rem;

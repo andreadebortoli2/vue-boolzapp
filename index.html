@@ -89,7 +89,7 @@
                         <!-- /.contact-info -->
 
                         <div class="contact-last-access">
-                            {{lastAccess(index)}}
+                            {{DateTime.fromFormat(lastAccess(index), 'dd/MM/yyyy HH:mm:ss').toFormat('HH:mm')}}
                         </div>
                         <!-- /.contact-last-access -->
                     </div>
@@ -122,7 +122,7 @@
                             <!-- /.speaker-name -->
 
                             <div class="speaker-last-access-info">
-                                Ultimo accesso oggi alle {{lastAccess(index)}}
+                                Ultimo accesso oggi alle {{DateTime.fromFormat(lastAccess(index), 'dd/MM/yyyy HH:mm:ss').toFormat('HH:mm')}}
                             </div>
                             <!-- /.last-access-info -->
                         </div>
@@ -174,7 +174,7 @@
                                 <!-- /.message-utilities -->
 
                                 <div class="message-time">
-                                    {{messageDate(index,msgId)}}
+                                    {{DateTime.fromFormat(messageDate(index,msgId), 'dd/MM/yyyy HH:mm:ss').toFormat('HH:mm')}}
                                 </div>
                                 <!-- /.message-time -->
                             </div>
@@ -212,7 +212,8 @@
     </div>
     <!-- /.app -->
 
-    
+
+    <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./assets/js/app.js"></script>
 </body>

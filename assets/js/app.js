@@ -184,6 +184,7 @@ createApp({
                 status: 'received',
             },
             searchUser: '',
+            DateTime: luxon.DateTime,
         }
     },
     methods: {
@@ -205,19 +206,26 @@ createApp({
             this.contacts.filter(contact => contact.name.toLowerCase().includes(this.searchUser.toLowerCase()) ? contact.visible = true : contact.visible = false);
         },
         remove(index, msgId) {
-            this.contacts[index].messages.splice(msgId,1)
+            // console.log(this.contacts[index].messages.splice(msgId,1));
+            this.contacts[index].messages.splice(msgId,1);
         },
         messageDate(index, msgId) {
-            return this.contacts[index].messages[msgId].date
+            // console.log(this.contacts[index].messages[msgId].date);
+            return this.contacts[index].messages[msgId].date;
         },
         lastMessage(index) {
-            return this.contacts[index].messages[this.contacts[index].messages.length-1].text
+            // console.log(this.contacts[index].messages[this.contacts[index].messages.length-1].text);
+            return this.contacts[index].messages[this.contacts[index].messages.length-1].text;
         },
         lastAccess(index) {
-            return this.contacts[index].messages[this.contacts[index].messages.length-1].date
+            // console.log(this.contacts[index].messages[this.contacts[index].messages.length-1].date);
+            return this.contacts[index].messages[this.contacts[index].messages.length-1].date;
         },
     },
     mounted() {
-            console.log('show: ');  
+            /* console.log('show: '+ this.DateTime.now());  
+            console.log('show: '+ this.DateTime.now().toFormat('HH:mm'));  
+            console.log(this.contacts[0].messages[0].date);
+            console.log(this.DateTime.fromFormat(this.contacts[0].messages[0].date, 'dd/MM/yyyy HH:mm:ss').toFormat('HH:mm'));  */
     },
 }).mount('#app')

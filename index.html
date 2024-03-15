@@ -82,7 +82,7 @@
                             <div class="contact-name">
                                 {{contact.name}}
                             </div>
-                            <div class="contact-status">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</div>
+                            <div class="contact-last-message" @click="lastMessage(index)">0000</div>
                         </div>
                         <!-- /.contact-info -->
 
@@ -171,8 +171,8 @@
                                 </div>
                                 <!-- /.message-utilities -->
 
-                                <div class="message-time">
-                                    {{message.date}}
+                                <div class="message-time" @click="time(index,msgId)">
+                                    0
                                 </div>
                                 <!-- /.message-time -->
                             </div>
@@ -210,6 +210,7 @@
     </div>
     <!-- /.app -->
 
+    
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./assets/js/app.js"></script>
 </body>

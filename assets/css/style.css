@@ -163,7 +163,7 @@ body {
                 font-weight: 500;
             }
     
-            .contact-status {
+            .contact-last-message {
                 font-size: 0.7rem;
                 color: var(--icons-color);
             }

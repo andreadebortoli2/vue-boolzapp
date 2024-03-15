@@ -1,7 +1,7 @@
 // console.log('test');
 
-
 const { createApp } = Vue
+
 
 createApp({
     data() {
@@ -178,11 +178,6 @@ createApp({
                 },
             ],
             messageText: '',
-            newMessage: {
-                date: '000',
-                text: '',
-                status: 'sent'
-            },
             defeaultReply: {
                 date: '111',
                 text: 'ok',
@@ -198,9 +193,9 @@ createApp({
         },
         sendMessage(index, text) {
             this.messageText = text
-            this.newMessage.text = this.messageText;
-            this.messageText.length !== 0 ? (this.contacts[index].messages.push(this.newMessage), this.messageText = null) : null;
-            console.log(this.contacts[index].messages);
+            const newMessage = {date: '000', text: this.messageText, status: 'sent',};
+            this.messageText.length !== 0 ? (this.contacts[index].messages.push(newMessage),this.messageText='') : null;
+            // console.log(this.contacts[index].messages);
         },
         sendDefeaultReply(index) {
             setTimeout(() => this.contacts[index].messages.push(this.defeaultReply), 1000);
@@ -212,5 +207,11 @@ createApp({
         remove(index, msgId) {
             this.contacts[index].messages.splice(msgId,1)
         },
+        lastMessage(index) {
+            console.log(
+
+                this.contacts[index].messages[this.messages.length-1]
+            );
+        }
     },
 }).mount('#app')

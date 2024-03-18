@@ -279,7 +279,11 @@ createApp({
         },
         lastAccess(index) {
             // console.log(this.contacts[index].messages[this.contacts[index].messages.length-1].date);
-            return this.contacts[index].messages[this.contacts[index].messages.length-1].date;
+            if (this.contacts[index].messages[this.contacts[index].messages.length-1].date !== '') {
+                return this.DateTime.fromFormat(this.contacts[index].messages[this.contacts[index].messages.length-1].date, 'dd/MM/yyyy HH:mm:ss').toFormat('HH:mm');
+            } else {
+                return '';
+            };
         },
         currentDate() {
             // console.log(this.DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss'));

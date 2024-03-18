@@ -252,12 +252,12 @@ createApp({
         },
         sendMessage(index, text) {
             this.messageText = text
-            const newMessage = {date: this.currentDate(), text: this.messageText, status: 'sent',};
-            this.messageText.length !== 0 ? (this.contacts[index].messages.push(newMessage),this.messageText='') : null;
+            const newMessage = { date: this.currentDate(), text: this.messageText, status: 'sent', };
+            this.messageText.length !== 0 ? (this.contacts[index].messages.push(newMessage), this.messageText = '') : null;
             // console.log(this.contacts[index].messages);
         },
         sendDefeaultReply(index) {
-            const defeaultReply = {date: this.currentDate(), text: 'ok', status: 'received',};
+            const defeaultReply = { date: this.currentDate(), text: 'ok', status: 'received', };
             setTimeout(() => this.contacts[index].messages.push(defeaultReply), 1000);
         },
         searchUserName() {
@@ -266,21 +266,21 @@ createApp({
         },
         remove(index, msgId) {
             // console.log(this.contacts[index].messages.splice(msgId,1));
-            this.contacts[index].messages.splice(msgId,1);
+            this.contacts[index].messages.splice(msgId, 1);
             console.log(this.contacts[index].messages[msgId].text);
         },
         messageDate(index, msgId) {
             // console.log(this.contacts[index].messages[msgId].date);
-            return this.contacts[index].messages[msgId].date;
+            return this.DateTime.fromFormat(this.contacts[index].messages[msgId].date, 'dd/MM/yyyy HH:mm:ss').toFormat('HH:mm');
         },
         lastMessage(index) {
             // console.log(this.contacts[index].messages[this.contacts[index].messages.length-1].text);
-            return this.contacts[index].messages[this.contacts[index].messages.length-1].text;
+            return this.contacts[index].messages[this.contacts[index].messages.length - 1].text;
         },
         lastAccess(index) {
             // console.log(this.contacts[index].messages[this.contacts[index].messages.length-1].date);
-            if (this.contacts[index].messages[this.contacts[index].messages.length-1].date !== '') {
-                return this.DateTime.fromFormat(this.contacts[index].messages[this.contacts[index].messages.length-1].date, 'dd/MM/yyyy HH:mm:ss').toFormat('HH:mm');
+            if (this.contacts[index].messages[this.contacts[index].messages.length - 1].date !== '') {
+                return this.DateTime.fromFormat(this.contacts[index].messages[this.contacts[index].messages.length - 1].date, 'dd/MM/yyyy HH:mm:ss').toFormat('HH:mm');
             } else {
                 return '';
             };
@@ -290,12 +290,16 @@ createApp({
             return this.DateTime.now().toFormat('dd/MM/yyyy HH:mm:ss');
         },
         addEmoteText(index) {
-           this.messageText += this.emoticons[index].text
-        //    console.log(this.messageText);
+            this.messageText += this.emoticons[index].text
+            //    console.log(this.messageText);
+        },
+        messageClass(index, msgId) {
+            const messageStatus = this.contacts[index].messages[msgId].status
+            return messageStatus === 'sent' ? 'sent' : messageStatus === 'received' ? 'received' : messageStatus === 'none' ? 'none' : ''
         },
     },
     mounted() {
-            /* console.log('show: '+ ); */
-            
+        /* console.log('show: '+ ); */
+
     },
 }).mount('#app')

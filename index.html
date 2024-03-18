@@ -148,7 +148,7 @@
                         <div class="wrapper">
 
                             <div class="message"
-                                :class="{sent: message.status === 'sent', received: message.status === 'received', none: message.status === 'none'}"
+                                :class="messageClass(index,msgId)"
                                 v-for="(message,msgId) in contact.messages">
 
                                 <div class="message-text">
@@ -174,7 +174,7 @@
                                 <!-- /.message-utilities -->
 
                                 <div class="message-time">
-                                    {{DateTime.fromFormat(messageDate(index,msgId), 'dd/MM/yyyy HH:mm:ss').toFormat('HH:mm')}}
+                                    {{messageDate(index, msgId)}}
                                 </div>
                                 <!-- /.message-time -->
                             </div>
